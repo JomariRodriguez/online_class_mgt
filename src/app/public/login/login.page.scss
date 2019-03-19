@@ -1,0 +1,52 @@
+$white-color: #fff;
+$height100: 100%;
+
+ion-grid {
+    width:100%;
+    height: $height100;
+    background: #dfdfdf;
+}
+
+ion-row {
+    height: $height100;
+}
+
+ion-col {
+    border: 1px solid #488aff;
+    background: $white-color;
+}
+
+ion-img {
+    width:30%;
+    height:30%;
+    align-items: center;
+    display: block;
+    margin: 0 auto;
+}
+
+@media (min-width: 240px) and (max-width: 768px) {
+    ion-grid {
+        background: $white-color;
+    }
+    ion-col {
+        border: none;
+    }
+}
+
+#txtRegister {
+    text-align: center;
+    font-style: italic;
+    margin: 0 auto;
+    display: block;
+    padding: 5px;
+}
+
+#txtTitle {
+    font-weight: bold;
+    margin: 0 auto;
+    display: block;
+    color: #007236;
+    text-align: center;
+    margin-top:10px;
+    margin-bottom:40px;
+}

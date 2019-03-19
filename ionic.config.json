@@ -1,5 +1,7 @@
 {
   "name": "online_class_management_system",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

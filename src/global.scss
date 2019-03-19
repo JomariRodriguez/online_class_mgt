@@ -9,3 +9,25 @@
 @import '~@ionic/angular/css/text-alignment.css';
 @import '~@ionic/angular/css/text-transformation.css';
 @import '~@ionic/angular/css/flex-utils.css';
+:root {
+    // Button Green
+    --ion-color-buttonGreen: #007236;
+    --ion-color-buttonGreen-rgb: 0, 114, 54;
+    --ion-color-buttonGreen-contrast: #fff;
+    --ion-color-buttonGreen-contrast-rgb: 255, 255, 255;
+    --ion-color-buttonGreen-shade: #004923;
+    --ion-color-buttonGreen-tint: #157040;
+}
+.ion-color-buttonGreen {
+    --ion-color-base: var(--ion-color-buttonGreen) !important;
+    --ion-color-base-rgb: var(--ion-color-buttonGreen-rgb) !important;
+    --ion-color-contrast: var(--ion-color-buttonGreen-contrast) !important;
+    --ion-color-contrast-rgb: var(--ion-color-buttonGreen-contrast-rgb) !important;
+    --ion-color-shade: var(--ion-color-buttonGreen-shade) !important;
+    --ion-color-tint: var(--ion-color-buttonGreen-tint) !important;
+}
+
+.ion-header {
+    background-color: #007236 !important;
+    color: #fff !important;
+}

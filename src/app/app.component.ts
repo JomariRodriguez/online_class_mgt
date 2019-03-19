@@ -1,3 +1,5 @@
+import { Router } from '@angular/router';
+import { AuthenticationService } from './services/authentication.service';
 import { Component } from '@angular/core';
 
 import { Platform } from '@ionic/angular';
@@ -12,15 +14,49 @@ export class AppComponent {
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,
-    private statusBar: StatusBar
+    private statusBar: StatusBar,
+    private authenticationService: AuthenticationService,
+    private router: Router,
+    private authService: AuthenticationService
   ) {
     this.initializeApp();
   }
+
+  logout() {
+    this.authService.logout();
+  }
+
+  public appPages = [
+    {
+      title: 'Profile',
+      url: '/members/dashboard',
+      // icon: 'home'
+    },
+    {
+      title: 'Attendances',
+      url: '/attendances',
+      // icon: 'home'
+    },
+    {
+      title: 'Students',
+      url: '/students',
+      // icon: 'home'
+    }
+  ];
 
   initializeApp() {
     this.platform.ready().then(() => {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
+ 
+      this.authenticationService.authenticationState.subscribe(state => {
+        console.log("Auth changed: ", state);
+        if (state) {
+          this.router.navigate(['members', 'dashboard']);
+        } else {
+          this.router.navigate(['login']);
+        }
+      });
     });
   }
 }

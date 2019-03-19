@@ -1,0 +1,82 @@
+<ion-header>
+  <ion-toolbar color="buttonGreen">
+    <ion-buttons slot="start">
+        <ion-back-button defaultHref="/login"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Register</ion-title>
+  </ion-toolbar>
+</ion-header>
+ 
+<ion-content padding>
+  <ion-list>
+      <ion-item>
+        <ion-label>Department</ion-label>
+        <ion-select placeholder="Select One" required>
+          <ion-select-option value="1">Department Name 1</ion-select-option>
+          <ion-select-option value="2">Department Name 2</ion-select-option>
+          <ion-select-option value="3">Department Name 3</ion-select-option>
+          <ion-select-option value="4">Department Name 4</ion-select-option>
+          <ion-select-option value="5">Department Name 5</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-input placeholder="First Name" autocapitalize="on" required></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input placeholder="Middle Name" autocapitalize="on"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input placeholder="Last Name" autocapitalize="on" required></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input placeholder="Username" required></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input placeholder="Job Title" required></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input placeholder="Email" inputmode="email" pattern="email" type="email" required></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input placeholder="Image"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input placeholder="Password" inputmode="password" pattern="password" type="password" min="6" required></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input placeholder="Confirm Password" inputmode="password" pattern="password" type="password" min="6" required></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Gender</ion-label>
+        <ion-select placeholder="Select One" required>
+          <ion-select-option value="1">Male</ion-select-option>
+          <ion-select-option value="2">Female</ion-select-option>
+        </ion-select>
+      </ion-item>
+      
+      <ion-item>
+        <ion-label>Birthday</ion-label>
+        <ion-datetime display-format="MM-DD-YYYY" picker-format="MMM DD YYYY"></ion-datetime>
+      </ion-item>
+      
+      <ion-item>
+        <ion-input placeholder="Contact no" required></ion-input>
+      </ion-item>
+      
+      <ion-item>
+        <ion-textarea autocapitalize="on" placeholder="Address" required rows="3"></ion-textarea>
+      </ion-item>
+      <br/>
+      <ion-button expand="block" color="buttonGreen">SUBMIT</ion-button>
+    </ion-list>
+</ion-content>

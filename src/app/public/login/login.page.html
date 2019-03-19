@@ -1,0 +1,37 @@
+<!--<ion-header>
+  <ion-toolbar>
+    <ion-title>login</ion-title>
+  </ion-toolbar>
+</ion-header>  
+<ion-content padding>
+  <ion-button (click)="login()" expand="block">Login</ion-button>
+  <ion-button expand="block" color="secondary" routerLink="/register" routerDirection="forward">Register</ion-button>
+</ion-content> 
+-->
+
+<ion-grid>
+  <ion-row justify-content-center>
+    <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
+      <div text-center>
+        <ion-img src="assets/images/school_logo.png" alt="School Logo"></ion-img>
+      </div>
+      <div padding>
+        <h3 id="txtTitle">
+            Records Management System
+        </h3>
+        <ion-item>
+          <ion-input type="text" placeholder="Username"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-input type="password" placeholder="Password"></ion-input>
+        </ion-item>
+      </div>
+
+      <div padding>
+          <ion-button (click)="login()" expand="block" color="buttonGreen">Login</ion-button>
+          <ion-label expand="block" routerLink="/register" routerDirection="forward" color="medium" id="txtRegister">Not yet a member? Register here</ion-label>
+      </div>
+    </ion-col>
+  </ion-row>
+</ion-grid>

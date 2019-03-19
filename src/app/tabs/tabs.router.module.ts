@@ -8,6 +8,11 @@ const routes: Routes = [
     component: TabsPage,
     children: [
       {
+        path: 'dashboard',
+        redirectTo: './members/dashboard',
+        pathMatch: 'full'
+      },
+      {
         path: 'tab1',
         children: [
           {
@@ -34,32 +39,28 @@ const routes: Routes = [
           }
         ]
       },
+      // {
+      //   path: '',
+      //   redirectTo: '/tabs/tab1',
+      //   pathMatch: 'full'
+      // }
       {
         path: '',
-        redirectTo: '/tabs/login',
+        redirectTo: './login',
         pathMatch: 'full'
       }
     ]
   },
+  // {
+  //   path: '',
+  //   redirectTo: '/tabs/tab1',
+  //   pathMatch: 'full'
+  // }
   {
     path: 'login',
-    redirectTo: '/login',
+    redirectTo: './login',
     pathMatch: 'full'
   }
-  /*{
-    path: 'login',
-    children: [
-      {
-        path: '',
-        loadChildren: '../login/login.module#LoginPageModule'
-      }
-    ]
-  },
-  {
-    path: '',
-    redirectTo: '/login',
-    pathMatch: 'full'
-  }*/
 ];
 
 @NgModule({

@@ -1,0 +1,76 @@
+<ion-header>
+  <ion-toolbar color="buttonGreen">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Profile</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-grid>
+        <ion-row>
+          <ion-col id="dashboardCol1">
+            <ion-img src="assets/images/default_image.png" alt="Instructor Image" id="instructorImage"></ion-img>
+          </ion-col>
+          <ion-col id="dashboardCol2" text-wrap>
+            <ion-card-title>Juan dela Cruz</ion-card-title>
+            <ion-card-subtitle>IT Instructor</ion-card-subtitle>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-header>
+  </ion-card>
+  <ion-list lines="full">
+    <ion-item routerLink="/register" detail>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-label>MY DETAILS</ion-label>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-card-subtitle>Review your personal info.</ion-card-subtitle>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+    
+    <ion-item routerLink="/subjects" detail>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-label>MY SUBJECTS</ion-label>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-card-subtitle>Manage your handled subjects.</ion-card-subtitle>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+    
+    <ion-item routerLink="/terms" detail>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-label>LEGAL STUFF</ion-label>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-card-subtitle text-wrap>Our Terms & Conditions and Privacy Policy.</ion-card-subtitle>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+
+    <ion-item *ngFor="let p of instructors">
+      <h2>{{p.firstname}}</h2>
+    </ion-item>
+  </ion-list>
+</ion-content>

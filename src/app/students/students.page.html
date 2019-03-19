@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar color="buttonGreen">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Students</ion-title>
+    <ion-buttons slot="end">
+      <ion-button routerLink="/student-register">
+        <ion-icon slot="icon-only" name="add"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-searchbar showCancelButton ></ion-searchbar>
+  <ion-list lines="full" padding>
+      <ion-item routerLink="/student-profile" detail>
+        <ion-grid>
+          <ion-row>
+            <ion-col>
+              <ion-label>Juan dela Cruz</ion-label>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <ion-card-subtitle>Section: BSIT-1</ion-card-subtitle>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-item>
+      <ion-item routerLink="/student-profile" detail>
+        <ion-grid>
+          <ion-row>
+            <ion-col>
+              <ion-label>John Smith</ion-label>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <ion-card-subtitle>Section: BSIT-2</ion-card-subtitle>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-item>
+  </ion-list>
+</ion-content>
