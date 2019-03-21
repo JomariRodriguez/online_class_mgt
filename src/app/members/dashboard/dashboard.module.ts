@@ -6,7 +6,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { IonicModule, ToastController } from '@ionic/angular';
 
 import { DashboardPage } from './dashboard.page';
-import { InstructorService } from 'src/app/services/instructor.service';
+import { InstructorService } from 'src/app/shared/instructor.service';
 import { Instructor } from 'src/app/entities/instructor.entity';
 import { Component } from '@angular/core';
 
@@ -28,34 +28,35 @@ const routes: Routes = [
 })
 export class DashboardPageModule {
   
-  instructors: Instructor[];
+  // instructors: Instructor[];
 
-  constructor(
-    private instructorService: InstructorService,
-    private toastController: ToastController
-  ) {
-    this.instructorService.findAll().subscribe(
-      res => {
-        this.instructors = res;
-        console.log(this.instructors);
-      },
-      async error => {
-        // const toast = await this.toastController.create({
-        //   message: error,
-        //   position: 'bottom'
-        // }).present();
+  // constructor(
+  //   private instructorService: InstructorService,
+  //   private toastController: ToastController
+  // ) {
+  //   this.instructorService.findAll().subscribe(
+  //     res => {
+  //       this.instructors = res;
+  //       console.log(this.instructors);
+  //     },
+  //     async error => {
+  //       // const toast = await this.toastController.create({
+  //       //   message: error,
+  //       //   position: 'bottom'
+  //       // }).present();
 
-        // async presentToast() {
-          const toast = await this.toastController.create({
-            message: error,
-            duration: 2000,
-            position: 'bottom'
-          });
-          toast.present();
-        // }
-      }
-    );
+  //       // async presentToast() {
+  //         const toast = await this.toastController.create({
+  //           message: error,
+  //           duration: 2000,
+  //           position: 'bottom'
+  //         });
+  //         toast.present();
+  //         console.log(error);
+  //       // }
+  //     }
+  //   );
 
-  }
+  // }
 
 }

@@ -12,15 +12,15 @@ export class InstructorService {
         private http: Http
     ) {}
 
-    findAll(): Observable<any> {
-        return this.http.get(this.BASE_URL + 'view_all')
-            .pipe(
-                map((response: any) => {
-                    response.json();
-                }),
-                catchError((error: Error) => {
-                    return Observable.throw(new Error(error.message))
-                })
-            );
-    }
+    // findAll(): Observable<any> {
+    //     return this.http.get(this.BASE_URL + 'view_all')
+    //         .pipe(
+    //             map((response: any) => {
+    //                 response.json();
+    //             }),
+    //             catchError((error: Error) => {
+    //                 return Observable.throw(new Error(error.message))
+    //             })
+    //         );
+    // }
 }

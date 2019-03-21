@@ -16,7 +16,7 @@
             <ion-img src="assets/images/default_image.png" alt="Instructor Image" id="instructorImage"></ion-img>
           </ion-col>
           <ion-col id="dashboardCol2" text-wrap>
-            <ion-card-title>Juan dela Cruz</ion-card-title>
+            <ion-card-title>{{ username }}</ion-card-title>
             <ion-card-subtitle>IT Instructor</ion-card-subtitle>
           </ion-col>
         </ion-row>
@@ -54,7 +54,7 @@
       </ion-grid>
     </ion-item>
     
-    <ion-item routerLink="/terms" detail>
+    <!-- <ion-item routerLink="/terms" detail>
       <ion-grid>
         <ion-row>
           <ion-col>
@@ -67,10 +67,6 @@
           </ion-col>
         </ion-row>
       </ion-grid>
-    </ion-item>
-
-    <ion-item *ngFor="let p of instructors">
-      <h2>{{p.firstname}}</h2>
-    </ion-item>
+    </ion-item>-->
   </ion-list>
 </ion-content>

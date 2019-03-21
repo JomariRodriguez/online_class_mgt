@@ -8,139 +8,15 @@
 </ion-header>
 
 <ion-content >
-  <ion-searchbar placeholder="Subject Code" showCancelButton ></ion-searchbar>
-  <ion-list lines="full" padding>
-    <ion-item>
-      <ion-label text-wrap>Study & Thinking Skills</ion-label>
-      <ion-checkbox slot="end"></ion-checkbox>
-    </ion-item>
-    <ion-item>
-      <ion-label text-wrap>Komunikasyon sa Akademikong Filipino</ion-label>
-      <ion-checkbox slot="end"></ion-checkbox>
-    </ion-item>
-    <ion-item>
-      <ion-label text-wrap>Modern College Algebra</ion-label>
-      <ion-checkbox slot="end"></ion-checkbox>
-    </ion-item>
-    <ion-item>
-      <ion-label text-wrap>Philippine History</ion-label>
-      <ion-checkbox slot="end"></ion-checkbox>
-    </ion-item>
-    <ion-item>
-      <ion-label text-wrap>Philosophy of Man</ion-label>
-      <ion-checkbox slot="end"></ion-checkbox>
-    </ion-item>
-    <ion-item>
-      <ion-label text-wrap>Computer Fundamentals w/ Art & Style</ion-label>
-      <ion-checkbox slot="end"></ion-checkbox>
-    </ion-item>
-    <ion-item>
-      <ion-label text-wrap>Introduction to Information Technology and Internet</ion-label>
-      <ion-checkbox slot="end"></ion-checkbox>
-    </ion-item>
-    <ion-item>
-      <ion-label text-wrap>Grammar & Reading</ion-label>
-      <ion-checkbox slot="end"></ion-checkbox>
-    </ion-item>
-    <ion-item>
-      <ion-label text-wrap>Physical Fitness</ion-label>
-      <ion-checkbox slot="end"></ion-checkbox>
-    </ion-item>
-    <ion-item>
-      <ion-label text-wrap>National Service Training Program</ion-label>
-      <ion-checkbox slot="end"></ion-checkbox>
-    </ion-item>
-    <ion-item>
-      <ion-label text-wrap>Writing in Discipline</ion-label>
-      <ion-checkbox slot="end"></ion-checkbox>
-    </ion-item>
-    <ion-item>
-      <ion-label text-wrap>Trigonometry and Analytical Geometry</ion-label>
-      <ion-checkbox slot="end"></ion-checkbox>
-    </ion-item>
-    <ion-item>
-      <ion-label text-wrap>Politics & Governance with Philippine Constitution</ion-label>
-      <ion-checkbox slot="end"></ion-checkbox>
-    </ion-item>
-    <ion-item>
-      <ion-label text-wrap>Operating System</ion-label>
-      <ion-checkbox slot="end"></ion-checkbox>
-    </ion-item>
-    <ion-item>
-      <ion-label text-wrap>Application Software</ion-label>
-      <ion-checkbox slot="end"></ion-checkbox>
-    </ion-item>
-    <ion-item>
-      <ion-label text-wrap>Programming 1</ion-label>
-      <ion-checkbox slot="end"></ion-checkbox>
-    </ion-item>
-    <ion-item>
-      <ion-label text-wrap>Logic Design & Digital Computer Circuits</ion-label>
-      <ion-checkbox slot="end"></ion-checkbox>
-    </ion-item>
-    <ion-item>
-      <ion-label text-wrap>Rhythmic Activities</ion-label>
-      <ion-checkbox slot="end"></ion-checkbox>
-    </ion-item>
-    <ion-item>
-      <ion-label text-wrap>National Service Training Program</ion-label>
-      <ion-checkbox slot="end"></ion-checkbox>
-    </ion-item>
-    <ion-item>
-      <ion-label>E text-wrap-Commerce</ion-label>
-      <ion-checkbox slot="end"></ion-checkbox>
-    </ion-item>
-    <ion-item>
-      <ion-label text-wrap>System Project Management</ion-label>
-      <ion-checkbox slot="end"></ion-checkbox>
-    </ion-item>
-    <ion-item>
-      <ion-label> text-wrapFile Organization</ion-label>
-      <ion-checkbox slot="end"></ion-checkbox>
-    </ion-item>
-    <ion-item>
-      <ion-label text-wrap>Asian Literature</ion-label>
-      <ion-checkbox slot="end"></ion-checkbox>
-    </ion-item>
-    <ion-item>
-      <ion-label text-wrap>Programming 2</ion-label>
-      <ion-checkbox slot="end"></ion-checkbox>
-    </ion-item>
-    <ion-item>
-      <ion-label> text-wrapData Structure & Algorithms</ion-label>
-      <ion-checkbox slot="end"></ion-checkbox>
-    </ion-item>
-    <ion-item>
-      <ion-label text-wrap>Micro Troubleshooting</ion-label>
-      <ion-checkbox slot="end"></ion-checkbox>
-    </ion-item>
-    <ion-item>
-      <ion-label text-wrap>Fundamentals of Games & Sports</ion-label>
-      <ion-checkbox slot="end"></ion-checkbox>
-    </ion-item>
-    <ion-item>
-      <ion-label text-wrap>Relational Database Management System</ion-label>
-      <ion-checkbox slot="end"></ion-checkbox>
-    </ion-item>
-    <ion-item>
-      <ion-label text-wrap>Professional Ethics & Values Education</ion-label>
-      <ion-checkbox slot="end"></ion-checkbox>
-    </ion-item>
-    <ion-item>
-      <ion-label> text-wrapData Communication & Networking</ion-label>
-      <ion-checkbox slot="end"></ion-checkbox>
-    </ion-item>
-    <ion-item>
-      <ion-label text-wrap>System Analysis and Design</ion-label>
-      <ion-checkbox slot="end"></ion-checkbox>
-    </ion-item>
-    <ion-item>
-      <ion-label text-wrap>Software Integration</ion-label>
-      <ion-checkbox slot="end"></ion-checkbox>
-    </ion-item>
-    <ion-item>
-      <ion-label>On text-wrap-The-Job Training</ion-label>
-      <ion-checkbox slot="end"></ion-checkbox>
-    </ion-item>
-  </ion-list>
+  <!--<ion-searchbar placeholder="Subject Code" showCancelButton ></ion-searchbar>-->
+  <form [formGroup]="form" (ngSubmit)="submit()">
+    <ion-list lines="full" padding>
+      <ion-item formArrayName="subjects" *ngFor="let order of form.controls.subjects.controls; let i = index">
+        <ion-label text-wrap>{{subjects[i].name}}</ion-label>
+        <ion-checkbox slot="end" [formControlName]="i" checked="false"></ion-checkbox>
+      </ion-item>
+    </ion-list>
+
+    <ion-button type="submit" expand="block" color="buttonGreen" padding>SUBMIT</ion-button>
+  </form>
 </ion-content>
