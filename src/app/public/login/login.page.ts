@@ -23,21 +23,20 @@ export class LoginPage implements OnInit {
   }
   
   login() {
-    if(!this.username || !this.password) {
-      var parent = document.getElementById('error-container');
-      var error = document.createElement('div');
-      error.setAttribute('style', 'text-align: center; color: red;');
-      error.innerHTML = 'Username and Password is required.';
-      parent.insertBefore(error, parent.firstChild);
-      setTimeout(function(){ parent.removeChild(parent.firstChild); }, 4000);
-      return;
-    }
+    // if(!this.username || !this.password) {
+    //   var parent = document.getElementById('error-container');
+    //   var error = document.createElement('div');
+    //   error.setAttribute('style', 'text-align: center; color: red;');
+    //   error.innerHTML = 'Username and Password is required.';
+    //   parent.insertBefore(error, parent.firstChild);
+    //   setTimeout(function(){ parent.removeChild(parent.firstChild); }, 4000);
+    //   return;
+    // }
     let credentials = {
       'username': this.username,
       'password': this.password
     };
 
     let result = this.authService.loginInstructor(credentials);
-    console.log(result);
   }
 }

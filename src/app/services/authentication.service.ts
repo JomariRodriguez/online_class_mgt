@@ -73,7 +73,7 @@ export class AuthenticationService {
 
       console.log('success login');
       let response = await this.http.post(
-        "https://self-raising-distre.000webhostapp.com/class_management/instructors/login", 
+        "https://self-raising-distre.000webhostapp.com/class_management/instructors/login.php", 
         body,
         {
           headers: headers,
@@ -82,13 +82,13 @@ export class AuthenticationService {
       .toPromise()
       .then(result => {
         console.log("Promise result ", result);
-        let res = (JSON.parse(result));
+        let res = (JSON.parse(result.toString()));
         
-        if(res.status == "success") {
+        // if(res.status == "success") {
           this.authenticationState.next(true);
-        } else {
-          this.authenticationState.next(false);
-        }
+        // } else {
+        //   this.authenticationState.next(false);
+        // }
       })
       .catch(error => {
         console.log("Promise error ", error);
